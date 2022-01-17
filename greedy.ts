@@ -47,7 +47,7 @@ if (import.meta.main) {
   }
 
   let scoreList = provideGuess(words);
-  let result: number = 0;
+  let result: Result = 0;
   while (nGuesses < 6 && scoreList.length > 1) {
     const guess = scoreList.slice(-1)[0][0];
     console.log(`try "${guess}".`);
