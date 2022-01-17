@@ -86,7 +86,7 @@ export class WordleSolver
   allowedWords: string[];
   
   constructor(words?: string[]) {
-    this.allowedWords = allWords;
+    this.allowedWords = words ?? allWords;
   }
 
   evaluate(sim: WordleSimulator) {
