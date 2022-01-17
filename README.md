@@ -8,7 +8,12 @@ Beware: you can get the wordlist from the game source, but the words
 are in chronological order and you _will_ spoil yourself unless you're
 very careful!
 
-On the other hand, @cfreshman provided a list of allowable guesses
-that is sorted alphabetically so you don't have to worry about that.
+And if you saw that one list of "allowed guesses" on github gists and you tried
+to use it on 2022-01-17, congrats: you just got trolled too :( the list appears
+to be missing all of the actual wordle solutions.
 
-That list is [here](https://gist.githubusercontent.com/cfreshman/cdcdf777450c5b5301e439061d29694c/raw/975d5100d91ddfe87d99dcee1f01170a43520ea0/wordle-allowed-guesses.txt).
+So I put together a [list](wordle-sorted-words.txt) that actually has
+all allowed guesses _and_ solutions in it, sorted alphabetically so
+you're not spoiled.
+
+Feel free to use it.
