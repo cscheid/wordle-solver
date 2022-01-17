@@ -1,5 +1,5 @@
 import {
-  allWords, Result, WordleSimulator, WordleSolver, isConsistent, valueAt, toResult
+  allWords, Result, WordleSimulator, WordleSolver, isConsistent, valueAt, toResult, win
 } from "./wordle.ts";
 
 import arrayShuffle from 'https://cdn.skypack.dev/array-shuffle';
@@ -47,10 +47,11 @@ if (import.meta.main) {
   }
 
   let scoreList = provideGuess(words);
+  let result: number = 0;
   while (nGuesses < 6 && scoreList.length > 1) {
     const guess = scoreList.slice(-1)[0][0];
     console.log(`try "${guess}".`);
-    let result = toResult(prompt("What was the result?")!);
+    result = toResult(prompt("What was the result?")!);
     const nextWords = [];
     for (const word of words) {
       if (isConsistent(word, guess, result)) {
@@ -61,7 +62,9 @@ if (import.meta.main) {
     words = nextWords;
     scoreList = provideGuess(words);
   }
-  if (scoreList.length === 1 && nGuesses === 6) {
+  if (result === win) {
+    console.log(`yay :)`);
+  } else if (scoreList.length === 1 && nGuesses === 6) {
     console.log(`The answer was "${scoreList[0][0]}" :(`);
   } else if (scoreList.length === 1) {
     console.log(`The answer is "${scoreList[0][0]}"! :)`);

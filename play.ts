@@ -43,6 +43,6 @@ if (import.meta.main) {
   if (i !== 6) {
     console.log("yay :)");
   } else {
-    console.log(`boo :( it was ${secretWord}`);
+    console.log(`oh no :( it was ${secretWord}`);
   }
 }
