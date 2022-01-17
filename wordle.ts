@@ -1,3 +1,5 @@
+import * as colors from "https://deno.land/std@0.121.0/fmt/colors.ts";
+
 export const allWords = Deno.readTextFileSync("wordle-sorted-words.txt").split("\n");
 
 // 00: "b"
@@ -9,6 +11,24 @@ export const allWords = Deno.readTextFileSync("wordle-sorted-words.txt").split("
 
 export type Result = number;
 export const win: Result = 2 + (2 << 2) + (2 << 4) + (2 << 6) + (2 << 8);
+
+export function resultToColors(result: Result) {
+  const resultStr: string[] = [];
+  for (let i = 0; i < 5; ++i) {
+    switch (valueAt(result, i)) {
+      case 0:
+        resultStr.push(colors.bgBrightBlack("  "));
+        break;
+      case 1:
+        resultStr.push(colors.bgBrightYellow("  "));
+        break;
+      case 2:
+        resultStr.push(colors.bgBrightGreen("  "));
+        break;
+    }
+  }
+  return resultStr.join(" ");
+}
 
 export function toResult(resultStr: string) : Result
 {

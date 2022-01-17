@@ -4,7 +4,7 @@ import {
 
 import arrayShuffle from 'https://cdn.skypack.dev/array-shuffle';
 
-function provideGuess(words: string[])
+export function provideGuess(words: string[])
 {
   let guesses = words.slice();
   words = arrayShuffle(words);
